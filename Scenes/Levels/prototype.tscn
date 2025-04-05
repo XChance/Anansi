@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://c4iedwah5yf7b"]
+
+[ext_resource type="PackedScene" uid="uid://d17f6ath3wyy8" path="res://Scenes/Entities/player.tscn" id="1_8esml"]
+[ext_resource type="Texture2D" uid="uid://c23m5uqgofmmv" path="res://icon.svg" id="2_fxda8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g26cx"]
+size = Vector2(120, 125)
+
+[node name="Prototype" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3, 3)
+
+[node name="Player" parent="." instance=ExtResource("1_8esml")]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(0, 103)
+scale = Vector2(5.25777, 0.424457)
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+texture = ExtResource("2_fxda8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_g26cx")
